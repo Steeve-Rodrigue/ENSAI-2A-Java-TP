@@ -18,17 +18,18 @@ public class Library {
 
     //Attributes
     private String name;
-    private List<Book> books;
+    private List<Item> items;
 
+    
     /**
-     * Construct a new library
+     * Represent a library
      * 
      * @param name
-     * @param books
+     * @param items
      */
-    public Library(String name, List<Book> books) {
+    public Library(String name, List<Item> items) {
         this.name = name;
-        this.books = books;
+        this.items = items;
     }
 
     public String getName() {
@@ -39,29 +40,29 @@ public class Library {
         this.name = name;
     }
 
-    public List<Book> getBooks() {
-        return books;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     /**
      * Method to add book to the library
      */
-    public void addBook(Book book){
-        this.books.add(book);
+    public void addItem(Item item){
+        this.items.add(item);
     }
 
     /**
      * Method to display all the book of the library
      * 
      */
-    public void displayBooks(){
+    public void displayItems(){
 
-        for (Book book : this.books) {
-            System.out.println(book.toString());
+        for (Item item : this.items) {
+            System.out.println(item.toString());
         }
     }
 
@@ -98,9 +99,9 @@ public class Library {
                         authors.put(authorName, author);
                         //System.out.println(String.format("Create %s", author));
                     }
-                    Book book = new Book(isbn, title, author, year, pageCount);
+                    Book book = new Book(isbn, author, title, null, null);
 
-                    this.addBook(book);
+                    this.addItem(book);
                 }
             }
         } catch (
@@ -109,4 +110,6 @@ public class Library {
             System.err.println("Error reading the file: " + e.getMessage());
         }
     }
+
+
 }

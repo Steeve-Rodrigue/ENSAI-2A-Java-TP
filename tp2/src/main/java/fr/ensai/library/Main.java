@@ -8,12 +8,19 @@ public class Main {
 
         Author tolkien = new Author("J.R.R. Tolkien", 81, "UK");
 
+        // Book fellowshipOfTheRing = new Book(
+        //         "978-0-618-26025-6",
+        //         "The Fellowship of the Ring",
+        //         tolkien,
+        //         1954,
+        //         423);
+
         Book fellowshipOfTheRing = new Book(
-                "978-0-618-26025-6",
-                "The Fellowship of the Ring",
-                tolkien,
-                1954,
-                423);
+            "978-0-618-26025-6",
+            tolkien,
+            "The Fellowship of the Ring",
+            1954,
+            423);
 
         System.out.println(fellowshipOfTheRing);
 
@@ -21,7 +28,7 @@ public class Main {
         
         myLibrary.loadBooksFromCSV("books.csv");
 
-        myLibrary.displayBooks();
+        myLibrary.displayItems();
     
     }
 }
