@@ -14,7 +14,7 @@ import java.net.URL;
  * Represent a library
  */
 
-public class library {
+public class Library {
 
     //Attributes
     private String name;
@@ -26,7 +26,7 @@ public class library {
      * @param name
      * @param books
      */
-    public library(String name, List<Book> books) {
+    public Library(String name, List<Book> books) {
         this.name = name;
         this.books = books;
     }
@@ -60,8 +60,8 @@ public class library {
      */
     public void displayBooks(){
 
-        for (Book book :   this.books) {
-            book.toString();
+        for (Book book : this.books) {
+            System.out.println(book.toString());
         }
     }
 
