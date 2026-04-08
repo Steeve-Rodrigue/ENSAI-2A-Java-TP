@@ -12,6 +12,13 @@ public class Author {
     private int age;
     private String nationality;
 
+        /**
+     * Constructs a new Author object.
+     */
+    public Author(String name) {
+        this.name = name;
+    }
+
     /**
      * Constructs a new Author object.
      */
