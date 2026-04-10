@@ -24,7 +24,7 @@ public class Person {
     public Person(int startFloor) {
         this.nickname = Person.generateNickname();
         this.startFloor = startFloor;
-        this.targetFloor = Person.generateTargetFloor();
+        this.targetFloor = this.generateTargetFloor();
     }
 
     /**
@@ -43,9 +43,13 @@ public class Person {
      * 
      * @return the target floor number
      */
-    private static int generateTargetFloor() {
-        int nbFloor = Config.getInt("hotel.display.floor");
-        return random.nextInt(nbFloor);
+    private  int generateTargetFloor() {
+        int nbFloor = Config.getInt("hotel.display.column-width.floor");
+        int nbFloorRandom = random.nextInt(nbFloor);
+        while (nbFloorRandom == this.startFloor) {
+            nbFloorRandom = random.nextInt(nbFloor);
+        }
+        return nbFloorRandom;
     }
 
     public String getNickname() {

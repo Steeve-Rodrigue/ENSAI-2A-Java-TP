@@ -20,8 +20,8 @@ public class Main {
         final int nbSteps = Config.getInt("steps.count");
         final int msBetweenSteps = Config.getInt("steps.delay");
 
-        final int nbElevator = Config.getInt("hotel.display.elevator");
-        final int nbFloor = Config.getInt("hotel.display.floor");
+        final int nbElevator = Config.getInt("hotel.display.column-width.elevator");
+        final int nbFloor = Config.getInt("hotel.display.column-width.floor");
 
          List<Floor> floors = new ArrayList<>();
          for (int i = 0; i < nbFloor; i++) {
@@ -30,7 +30,7 @@ public class Main {
 
         List<Elevator> elevators = new ArrayList<>();
         for (int i = 0; i < nbElevator; i++) {
-            elevators.add(new Elevator(i, elevatorCapacity));            
+            elevators.add(new Elevator(i,0, elevatorCapacity));            
          }
 
         Hotel hotel = new Hotel(floors, elevators);
