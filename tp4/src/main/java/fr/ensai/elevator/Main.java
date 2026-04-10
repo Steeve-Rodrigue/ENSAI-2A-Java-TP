@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
 public class Main {
 
     private static final Logger logger = LogManager.getLogger(Main.class);
@@ -31,7 +32,11 @@ public class Main {
         List<Elevator> elevators = new ArrayList<>();
         for (int i = 0; i < nbElevator; i++) {
             elevators.add(new Elevator(i,0, elevatorCapacity));            
-         }
+        }
+        //Add a crazy elevator in the hotel
+        elevators.add(new CrazyElevator(nbElevator, 0, elevatorCapacity));
+        
+
 
         Hotel hotel = new Hotel(floors, elevators);
 
@@ -47,6 +52,9 @@ public class Main {
             hotel.display(step);
             Thread.sleep(msBetweenSteps);
         }
+
+        
+
     }
 
 }

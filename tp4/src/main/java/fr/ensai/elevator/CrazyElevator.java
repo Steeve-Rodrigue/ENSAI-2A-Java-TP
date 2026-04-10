@@ -26,7 +26,9 @@ public class CrazyElevator extends Elevator {
 
         switch (cas) {
             case 0:
-                this.currentFloor = this.destinationQueue.removeFirst();
+                if (!this.destinationQueue.isEmpty()) {
+                    this.currentFloor = this.destinationQueue.removeFirst();   
+                }
                 break;
             case 1:
                 this.currentFloor = this.destinationQueue.remove(1);

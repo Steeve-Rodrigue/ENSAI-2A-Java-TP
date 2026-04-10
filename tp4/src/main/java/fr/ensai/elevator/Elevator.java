@@ -27,6 +27,7 @@ public class Elevator {
     protected List<Integer> destinationQueue;
     protected List<Person> passengers;
     protected List<Person> lastUnloaded;
+    protected direction directed;
 
     /**
      * Constructs a new Elevator with the specified parameters.
@@ -151,8 +152,18 @@ public class Elevator {
      * Removes that floor from the queue.
      */
     public void move() {
+        int previousFloor = this.currentFloor;
         if (!destinationQueue.isEmpty())
             this.currentFloor = destinationQueue.removeFirst();
+
+        int value = this.currentFloor - previousFloor;
+        if (value > 0) {
+            this.directed = direction.UP;
+        } else if (value <0) {
+            this.directed = direction.DOWN;
+        } else {
+            this.directed = direction.IDLE;
+        }
     }
 
     /**
