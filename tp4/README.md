@@ -1,3 +1,8 @@
+Question : 2.4
+C'est compliqué de tester la fonction isFull de la method  parceque la capacité d'un elevateur est modifié par d'autres fonctions externes
+
+
+
 
 ## Run
 

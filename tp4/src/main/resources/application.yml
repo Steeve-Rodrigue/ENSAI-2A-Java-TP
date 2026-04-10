@@ -1,6 +1,6 @@
 steps:
   count: 4
-  delay: 1000
+  delay: 100
 
 hotel:
   elevator:
