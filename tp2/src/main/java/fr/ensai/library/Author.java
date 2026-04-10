@@ -12,6 +12,7 @@ public class Author {
     private int age;
     private String nationality;
 
+<<<<<<< HEAD
         /**
      * Constructs a new Author object.
      */
@@ -19,6 +20,8 @@ public class Author {
         this.name = name;
     }
 
+=======
+>>>>>>> d1aa0177c6ee9cabebaf77f3d7c3f3a5bf78f71f
     /**
      * Constructs a new Author object.
      */

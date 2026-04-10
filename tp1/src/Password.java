@@ -1,8 +1,12 @@
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+<<<<<<< HEAD
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
+=======
+import java.util.ArrayList;
+>>>>>>> d1aa0177c6ee9cabebaf77f3d7c3f3a5bf78f71f
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,6 +45,7 @@ public class Password {
      * @return the 6-digit number that matches, or null if no match is found
      */
     public static String bruteForce6Digit(String targetHash) {
+<<<<<<< HEAD
         for (int i = 1; i <= 999999; i++) {
 
             String number = String.format("%06d", i);
@@ -50,6 +55,11 @@ public class Password {
                 return number;
             }
         }
+=======
+
+        // Code here
+
+>>>>>>> d1aa0177c6ee9cabebaf77f3d7c3f3a5bf78f71f
         return null;
     }
 
@@ -68,6 +78,7 @@ public class Password {
      * @return true if the password is strong, false otherwise
      */
     public static boolean isStrongPassword(String password) {
+<<<<<<< HEAD
         if (password.length() < 12) {
             return false;
         }
@@ -91,6 +102,12 @@ public class Password {
             }
         }
         return hasUpperCase && hasLowerCase && hasDigit && !hasWhitespace;
+=======
+
+        // Code here
+
+        return false;
+>>>>>>> d1aa0177c6ee9cabebaf77f3d7c3f3a5bf78f71f
     }
 
     /**
@@ -103,6 +120,7 @@ public class Password {
      */
     public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
+<<<<<<< HEAD
         HashMap<String, Boolean> result = new HashMap<>();
 
         for (String password : passwords) {
@@ -110,6 +128,11 @@ public class Password {
         }
 
         return result;
+=======
+        // Code here
+
+        return null;
+>>>>>>> d1aa0177c6ee9cabebaf77f3d7c3f3a5bf78f71f
     }
 
     /**
@@ -125,6 +148,7 @@ public class Password {
      * @return A randomly generated password that meets the security criteria.
      */
     public static String generatePassword(int nbCar) {
+<<<<<<< HEAD
         if (nbCar < 4) {
             throw new IllegalArgumentException(
                     "Password length must be at least 4 to include all required character types.");
@@ -160,6 +184,12 @@ public class Password {
         }
 
         return passwordStr.toString();
+=======
+
+        // Code here
+
+        return null;
+>>>>>>> d1aa0177c6ee9cabebaf77f3d7c3f3a5bf78f71f
     }
 
     public static void main(String[] args) {
@@ -196,8 +226,15 @@ public class Password {
                         List.of("Abc5", "abcdef123456", "AbCdEf123456", "AbCdEf 123456"));
                 HashMap<String, Boolean> password_map = checkPasswordsList(passwords);
 
+<<<<<<< HEAD
                 for (Map.Entry<String, Boolean> entry : password_map.entrySet()) {
                     System.out.println(entry.getKey() + " -> " + entry.getValue());
+=======
+                if (password_map != null) {
+                    for (Map.Entry<String, Boolean> entry : password_map.entrySet()) {
+                        System.out.println(entry.getKey() + " -> " + entry.getValue());
+                    }
+>>>>>>> d1aa0177c6ee9cabebaf77f3d7c3f3a5bf78f71f
                 }
                 break;
 
