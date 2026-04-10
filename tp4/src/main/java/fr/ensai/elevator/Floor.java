@@ -71,12 +71,26 @@ public class Floor {
 
     /**
      * Press the button to call the first elevator.
-     * Requests the first elevator to stop at this floor.
+     * Requests the best elevator, which is the elevator that is already going  
+     * to that floor or the elevator that is least busy
+     * 
      * 
      * @param elevators the list of elevators available in the hotel
      */
     public void requestElevator(List<Elevator> elevators) {
-        elevators.get(0).addDestination(this.number);
+
+        Elevator bestElevator = elevators.get(0) ;
+        for (Elevator e : elevators) {
+
+            if (e.containDestination(this.number)){
+                bestElevator = e;
+                break;                
+            }
+            if (e.getDestinationQueueSize()< bestElevator.getDestinationQueueSize()) {
+                bestElevator = e;   
+            }
+        }
+        elevators.get(bestElevator.getId()).addDestination(this.number);
     }
 
     /**

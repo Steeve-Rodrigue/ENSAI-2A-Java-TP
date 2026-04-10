@@ -179,7 +179,10 @@ public class Elevator {
         return "[" + padded + "]" +
                 (unloaded.isBlank() ? "" : " " + unloaded);
     }
-
+    /**Method to find out if an elevator is full
+     * 
+     * @return  true if the elevator is full
+     */
     public  boolean isFull(){
         return this.capacity == Config.getInt("hotel.elevator.capacity");
     }

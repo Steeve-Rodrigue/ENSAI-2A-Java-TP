@@ -65,3 +65,4 @@ public class Person {
         return this.nickname + this.targetFloor;
     }
 }
+
