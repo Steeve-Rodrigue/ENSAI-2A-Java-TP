@@ -1,5 +1,5 @@
 package fr.ensai.elevator;
 
-public enum direction {
+public enum Direction {
         UP, DOWN, IDLE;
 }

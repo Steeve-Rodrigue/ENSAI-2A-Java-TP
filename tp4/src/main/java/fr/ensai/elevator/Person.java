@@ -10,7 +10,7 @@ public class Person {
     private String nickname;
     private int startFloor;
     private int targetFloor;
-    private direction directed;
+    private Direction directed;
 
     private static final String CHARS = "abcdefghijklmnopqrstuvwxyz";
     private static int NEXT_CHAR_INDEX = 0;

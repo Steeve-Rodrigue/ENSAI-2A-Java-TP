@@ -68,7 +68,7 @@ public class Hotel {
         System.out.println(horizontalBorder);
         System.out.printf("| %-" + floorColWidth + "s ", "Floor");
         for (Elevator elevator : this.elevators) {
-            System.out.printf("| %-" + elevatorColWidth + "s ", "Elevator" + (elevator.getId()));
+            System.out.printf("| %-" + elevatorColWidth + "s ", "Elevator" + (elevator.getId()) +direct(elevator));
         }
         System.out.printf("| %-" + personsColWidth + "s |\n", "waitingPersons");
         System.out.println(horizontalBorder);
@@ -77,5 +77,15 @@ public class Hotel {
         }
         System.out.println(horizontalBorder);
         System.out.println("Step : " + step + "\tDelivered passengers: " + deliveredPassengers);
+    }
+
+    public String direct(Elevator e){
+        if (e.directed == Direction.UP ) {
+            return "↑";
+        }else if (e.directed == Direction.DOWN) {
+            return "↓";  
+        }else{
+            return "";
+        }
     }
 }

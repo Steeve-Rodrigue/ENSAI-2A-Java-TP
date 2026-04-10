@@ -27,7 +27,7 @@ public class Elevator {
     protected List<Integer> destinationQueue;
     protected List<Person> passengers;
     protected List<Person> lastUnloaded;
-    protected direction directed;
+    protected Direction directed;
 
     /**
      * Constructs a new Elevator with the specified parameters.
@@ -158,11 +158,11 @@ public class Elevator {
 
         int value = this.currentFloor - previousFloor;
         if (value > 0) {
-            this.directed = direction.UP;
+            this.directed = Direction.UP;
         } else if (value <0) {
-            this.directed = direction.DOWN;
+            this.directed = Direction.DOWN;
         } else {
-            this.directed = direction.IDLE;
+            this.directed = Direction.IDLE;
         }
     }
 
